@@ -1,282 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omkar Car Rent</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omkar Car Rentals</title>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:Arial, sans-serif;
-      background:#080808;
-      color:white;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    header{
-      min-height:100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80");
-      background-size:cover;
-      background-position:center;
-      padding:20px;
-    }
+<style>
 
-    nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:12px 20px;
-      background:rgba(0,0,0,.55);
-      border:1px solid rgba(212,160,55,.4);
-      border-radius:18px;
-      backdrop-filter:blur(8px);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+body{
+background:#f5f5f5;
+color:#111;
+overflow-x:hidden;
+}
 
-    .brand img{
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      object-fit:cover;
-      border:2px solid #d4a037;
-    }
+/* TOP BAR */
 
-    .brand h2{
-      color:#f4c76b;
-      letter-spacing:1px;
-    }
+.top-bar{
+background:#000;
+color:#fff;
+padding:12px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:14px;
+}
 
-    .nav-links a{
-      color:white;
-      text-decoration:none;
-      margin-left:18px;
-      font-weight:bold;
-    }
+.top-left,
+.top-right{
+display:flex;
+gap:25px;
+align-items:center;
+flex-wrap:wrap;
+}
 
-    .hero{
-      max-width:760px;
-      margin:120px auto 0;
-      text-align:center;
-    }
+.top-bar i{
+color:#ffc400;
+margin-right:7px;
+}
 
-    .hero h1{
-      font-size:48px;
-      color:#f4c76b;
-      margin-bottom:18px;
-    }
+/* NAVBAR */
 
-    .hero p{
-      font-size:18px;
-      line-height:1.7;
-      color:#ddd;
-      margin-bottom:30px;
-    }
+.navbar{
+background:#fff;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-    .btn{
-      display:inline-block;
-      padding:15px 34px;
-      background:linear-gradient(135deg,#d4a037,#8b5a12);
-      color:#111;
-      text-decoration:none;
-      border-radius:40px;
-      font-weight:bold;
-      box-shadow:0 0 18px rgba(212,160,55,.45);
-    }
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
 
-    section{
-      padding:70px 20px;
-      max-width:1150px;
-      margin:auto;
-    }
+.logo img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:50%;
+}
 
-    .title{
-      text-align:center;
-      font-size:34px;
-      color:#f4c76b;
-      margin-bottom:35px;
-    }
+.logo-text h1{
+font-size:28px;
+font-weight:800;
+color:#111;
+line-height:1;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:22px;
-    }
+.logo-text span{
+font-size:13px;
+letter-spacing:3px;
+color:#ffc400;
+font-weight:600;
+}
 
-    .card{
-      background:#121212;
-      border:1px solid rgba(212,160,55,.35);
-      border-radius:20px;
-      padding:22px;
-      box-shadow:0 10px 25px rgba(0,0,0,.35);
-    }
+.nav-links{
+display:flex;
+gap:35px;
+align-items:center;
+}
 
-    .card img{
-      width:100%;
-      height:170px;
-      object-fit:cover;
-      border-radius:16px;
-      margin-bottom:15px;
-    }
+.nav-links a{
+text-decoration:none;
+color:#111;
+font-weight:600;
+transition:.3s;
+position:relative;
+}
 
-    .card h3{
-      color:#f4c76b;
-      margin-bottom:10px;
-    }
+.nav-links a:hover{
+color:#ffc400;
+}
 
-    .card p{
-      color:#ccc;
-      line-height:1.6;
-    }
+.book-btn{
+background:#ffc400;
+padding:14px 28px;
+border-radius:10px;
+font-weight:700;
+text-decoration:none;
+color:#111;
+box-shadow:0 5px 20px rgba(255,196,0,.4);
+}
 
-    .price{
-      margin:15px 0;
-      font-size:20px;
-      color:white;
-      font-weight:bold;
-    }
+/* HERO */
 
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      align-items:center;
-    }
+.hero{
+min-height:88vh;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 5%;
+position:relative;
+overflow:hidden;
+}
 
-    .about img{
-      width:100%;
-      border-radius:22px;
-      border:1px solid rgba(212,160,55,.35);
-    }
+.hero-content{
+width:55%;
+color:#fff;
+z-index:2;
+}
 
-    .about p{
-      color:#ddd;
-      line-height:1.8;
-      font-size:17px;
-    }
+.hero-sub{
+color:#ffc400;
+font-size:22px;
+font-weight:700;
+margin-bottom:15px;
+}
 
-    .contact-box{
-      background:#121212;
-      border:1px solid rgba(212,160,55,.35);
-      padding:30px;
-      border-radius:24px;
-      text-align:center;
-    }
+.hero h1{
+font-size:90px;
+line-height:1;
+font-weight:800;
+margin-bottom:25px;
+}
 
-    .contact-box p{
-      margin:12px 0;
-      font-size:18px;
-      color:#ddd;
-    }
+.hero h1 span{
+color:#ffc400;
+}
 
-    footer{
-      text-align:center;
-      padding:25px;
-      background:#050505;
-      color:#aaa;
-      border-top:1px solid rgba(212,160,55,.25);
-    }
+.hero p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:35px;
+color:#ddd;
+max-width:700px;
+}
 
-    @media(max-width:700px){
-      .hero h1{font-size:34px}
-      .nav-links{display:none}
-      .about{grid-template-columns:1fr}
-      .brand h2{font-size:18px}
-    }
-  </style>
+.hero-btns{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.primary-btn{
+background:#ffc400;
+padding:18px 35px;
+border-radius:10px;
+text-decoration:none;
+color:#111;
+font-weight:700;
+font-size:18px;
+}
+
+.secondary-btn{
+border:2px solid #fff;
+padding:18px 35px;
+border-radius:10px;
+text-decoration:none;
+color:#fff;
+font-weight:700;
+font-size:18px;
+}
+
+/* HERO CAR */
+
+.hero-car{
+position:absolute;
+right:3%;
+bottom:0;
+width:45%;
+}
+
+.hero-car img{
+width:100%;
+filter:drop-shadow(0 25px 30px rgba(0,0,0,.45));
+}
+
+/* BOOKING */
+
+.booking-box{
+background:#fff;
+width:90%;
+margin:auto;
+margin-top:-70px;
+position:relative;
+z-index:5;
+border-radius:20px;
+padding:30px;
+box-shadow:0 10px 40px rgba(0,0,0,.15);
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+}
+
+.input-box{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.input-box label{
+font-size:14px;
+font-weight:600;
+color:#555;
+}
+
+.input-box input,
+.input-box select{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
+outline:none;
+}
+
+.search-btn{
+background:#ffc400;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+}
+
+/* FEATURES */
+
+.features{
+padding:70px 5%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.feature-card{
+background:#fff;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.feature-card h3{
+margin:15px 0 10px;
+}
+
+.feature-card p{
+color:#666;
+line-height:1.7;
+}
+
+/* FLEET */
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:55px;
+font-weight:800;
+}
+
+.section-title span{
+color:#ffc400;
+}
+
+.section-title p{
+margin-top:10px;
+color:#666;
+}
+
+.fleet{
+padding:20px 5% 80px;
+}
+
+.car-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.car-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.car-card:hover{
+transform:translateY(-10px);
+}
+
+.car-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.car-content{
+padding:22px;
+}
+
+.car-content h3{
+font-size:25px;
+margin-bottom:10px;
+}
+
+.car-content p{
+color:#666;
+margin-bottom:15px;
+}
+
+.price{
+font-size:30px;
+font-weight:800;
+color:#ffc400;
+margin-bottom:18px;
+}
+
+.card-btn{
+display:block;
+text-align:center;
+background:#111;
+color:#fff;
+padding:14px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+color:#fff;
+padding:60px 5% 30px;
+margin-top:80px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
+
+footer h3{
+margin-bottom:20px;
+color:#ffc400;
+}
+
+footer p{
+line-height:1.9;
+color:#ccc;
+}
+
+.copyright{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.1);
+color:#888;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+.hero{
+padding-top:100px;
+padding-bottom:100px;
+}
+
+.hero-content{
+width:100%;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero-car{
+position:relative;
+width:90%;
+margin:auto;
+right:auto;
+}
+
+.booking-box{
+grid-template-columns:1fr;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.car-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+.car-grid{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.logo-text h1{
+font-size:22px;
+}
+
+.logo img{
+width:55px;
+height:55px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <nav>
-    <div class="brand">
-      <img src="logo.png" alt="Omkar Logo">
-      <h2>Omkar Car Rent</h2>
-    </div>
+<!-- TOP BAR -->
 
-    <div class="nav-links">
-      <a href="#cars">Cars</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<div class="top-bar">
 
-  <div class="hero">
-    <h1>Premium Car Rental Service</h1>
-    <p>
-      Omkar Car Rent me aapko clean, comfortable aur trusted cars milengi.
-      Local ride, wedding, tour, airport pickup aur family trip ke liye best service.
-    </p>
-    <a class="btn" href="tel:+919938017921">Call Now</a>
-  </div>
-</header>
+<div class="top-left">
+<div>📞 +919938017921</div>
+<div>✉️ omkarcarrent@gmail.com</div>
+</div>
 
-<section id="cars">
-  <h2 class="title">Available Cars</h2>
+<div class="top-right">
+<div>Instagram</div>
+<div>Facebook</div>
+<div>WhatsApp</div>
+</div>
 
-  <div class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80">
-      <h3>Sedan Car</h3>
-      <p>City ride, office trip aur family travel ke liye comfortable option.</p>
-      <div class="price">₹12/km onwards</div>
-      <a class="btn" href="tel:+919938017921">Book Now</a>
-    </div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80">
-      <h3>SUV Car</h3>
-      <p>Long route, hill trip aur family tour ke liye powerful SUV service.</p>
-      <div class="price">₹16/km onwards</div>
-      <a class="btn" href="tel:+919938017921">Book Now</a>
-    </div>
+<!-- NAVBAR -->
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80">
-      <h3>Luxury Car</h3>
-      <p>Wedding, VIP guest aur premium event ke liye luxury car rental.</p>
-      <div class="price">Custom Price</div>
-      <a class="btn" href="tel:+919938017921">Book Now</a>
-    </div>
-  </div>
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="logo.png">
+
+<div class="logo-text">
+<h1>OMKAR</h1>
+<span>CAR RENTALS</span>
+</div>
+
+</div>
+
+<div class="nav-links">
+<a href="#">HOME</a>
+<a href="#">ABOUT</a>
+<a href="#">FLEET</a>
+<a href="#">SERVICES</a>
+<a href="#">PRICING</a>
+<a href="#">CONTACT</a>
+</div>
+
+<a href="#" class="book-btn">BOOK NOW</a>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-sub">
+COMFORT • SAFETY • RELIABILITY
+</div>
+
+<h1>
+CAR RENT <br>
+<span>SERVICES</span>
+</h1>
+
+<p>
+Enjoy premium car rental service with clean cars,
+professional drivers and affordable prices.
+Book local rides, airport pickup, wedding cars
+and outstation tours easily.
+</p>
+
+<div class="hero-btns">
+
+<a href="#" class="primary-btn">
+BOOK NOW
+</a>
+
+<a href="tel:+919938017921" class="secondary-btn">
+CALL NOW
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-car">
+
+<img src="https://pngimg.com/d/suzuki_PNG12361.png">
+
+</div>
+
 </section>
 
-<section id="about">
-  <h2 class="title">About Omkar Car Rent</h2>
+<!-- BOOKING -->
 
-  <div class="about">
-    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80">
-    <p>
-      Omkar Car Rent ek trusted car rental service hai jahan customer ko safe,
-      clean aur time par car service milti hai. Hum local travel, outstation trip,
-      airport pickup, wedding car aur monthly rental service provide karte hain.
-      Hamara focus hai comfort, safety aur best customer experience.
-    </p>
-  </div>
+<div class="booking-box">
+
+<div class="input-box">
+<label>Pick-up Location</label>
+<select>
+<option>Select Location</option>
+<option>Sambalpur</option>
+<option>Nuapada</option>
+<option>Bhubaneswar</option>
+</select>
+</div>
+
+<div class="input-box">
+<label>Pick-up Date</label>
+<input type="date">
+</div>
+
+<div class="input-box">
+<label>Pick-up Time</label>
+<input type="time">
+</div>
+
+<div class="input-box">
+<label>Drop-off Date</label>
+<input type="date">
+</div>
+
+<button class="search-btn">
+SEARCH CAR
+</button>
+
+</div>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="feature-card">
+<h3>Best Price</h3>
+<p>Affordable pricing with premium service.</p>
+</div>
+
+<div class="feature-card">
+<h3>Clean Cars</h3>
+<p>Daily cleaned and sanitized vehicles.</p>
+</div>
+
+<div class="feature-card">
+<h3>24/7 Support</h3>
+<p>Customer support anytime you need.</p>
+</div>
+
+<div class="feature-card">
+<h3>Easy Booking</h3>
+<p>Quick and hassle free booking system.</p>
+</div>
+
 </section>
 
-<section id="contact">
-  <h2 class="title">Contact Us</h2>
+<!-- FLEET -->
 
-  <div class="contact-box">
-    <p><b>Phone:</b> +919938017921</p>
-    <p><b>Service:</b> Local • Outstation • Wedding • Airport Pickup</p>
-    <p><b>Location:</b> Your City, India</p>
-    <br>
-    <a class="btn" href="https://wa.me/+919938017921">WhatsApp Booking</a>
-  </div>
+<section class="fleet">
+
+<div class="section-title">
+<h2>OUR <span>FLEET</span></h2>
+<p>Choose from our premium collection of cars</p>
+</div>
+
+<div class="car-grid">
+
+<div class="car-card">
+
+<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/159099/swift-exterior-right-front-three-quarter.jpeg">
+
+<div class="car-content">
+
+<h3>Maruti Swift</h3>
+
+<p>4 Seats • Manual • Petrol</p>
+
+<div class="price">
+₹1200 / Day
+</div>
+
+<a href="#" class="card-btn">
+BOOK NOW
+</a>
+
+</div>
+
+</div>
+
+<div class="car-card">
+
+<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/40565/i20-exterior-right-front-three-quarter-5.jpeg">
+
+<div class="car-content">
+
+<h3>Hyundai i20</h3>
+
+<p>5 Seats • Manual • Petrol</p>
+
+<div class="price">
+₹1400 / Day
+</div>
+
+<a href="#" class="card-btn">
+BOOK NOW
+</a>
+
+</div>
+
+</div>
+
+<div class="car-card">
+
+<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/45691/dzire-exterior-right-front-three-quarter.jpeg">
+
+<div class="car-content">
+
+<h3>Maruti Dzire</h3>
+
+<p>5 Seats • Manual • Petrol</p>
+
+<div class="price">
+₹1500 / Day
+</div>
+
+<a href="#" class="card-btn">
+BOOK NOW
+</a>
+
+</div>
+
+</div>
+
+<div class="car-card">
+
+<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/51435/innova-crysta-exterior-right-front-three-quarter-2.jpeg">
+
+<div class="car-content">
+
+<h3>Toyota Innova</h3>
+
+<p>7 Seats • Manual • Diesel</p>
+
+<div class="price">
+₹2500 / Day
+</div>
+
+<a href="#" class="card-btn">
+BOOK NOW
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer>
-  © 2026 Omkar Car Rent. All Rights Reserved.
+
+<div class="footer-grid">
+
+<div>
+<h3>About Omkar</h3>
+<p>
+Premium car rental company providing
+comfortable and safe rides with affordable prices.
+</p>
+</div>
+
+<div>
+<h3>Services</h3>
+<p>
+Local Car Rental <br>
+Airport Pickup <br>
+Wedding Cars <br>
+Outstation Tours
+</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>
+📞 +919938017921<br>
+✉️ omkarcarrent@gmail.com <br>
+📍 Odisha, India
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Omkar Car Rentals. All Rights Reserved.
+</div>
+
 </footer>
 
 </body>
-      </html>
+</html>
