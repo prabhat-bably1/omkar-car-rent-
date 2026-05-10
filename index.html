@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Omkar Car Rentals</title>
+<title>Omkar Car Rent</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -18,8 +18,8 @@ font-family:'Poppins',sans-serif;
 
 body{
 background:#f5f5f5;
-color:#111;
 overflow-x:hidden;
+color:#111;
 }
 
 /* TOP BAR */
@@ -31,6 +31,7 @@ padding:12px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
 font-size:14px;
 }
 
@@ -38,13 +39,7 @@ font-size:14px;
 .top-right{
 display:flex;
 gap:25px;
-align-items:center;
 flex-wrap:wrap;
-}
-
-.top-bar i{
-color:#ffc400;
-margin-right:7px;
 }
 
 /* NAVBAR */
@@ -55,10 +50,10 @@ padding:18px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 15px rgba(0,0,0,0.08);
 position:sticky;
 top:0;
-z-index:1000;
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .logo{
@@ -70,21 +65,20 @@ gap:15px;
 .logo img{
 width:70px;
 height:70px;
-object-fit:cover;
 border-radius:50%;
+object-fit:cover;
 }
 
 .logo-text h1{
-font-size:28px;
+font-size:30px;
 font-weight:800;
-color:#111;
 line-height:1;
 }
 
 .logo-text span{
 font-size:13px;
 letter-spacing:3px;
-color:#ffc400;
+color:#f0b400;
 font-weight:600;
 }
 
@@ -96,33 +90,33 @@ align-items:center;
 
 .nav-links a{
 text-decoration:none;
-color:#111;
 font-weight:600;
+color:#111;
 transition:.3s;
-position:relative;
 }
 
 .nav-links a:hover{
-color:#ffc400;
+color:#f0b400;
 }
 
 .book-btn{
-background:#ffc400;
-padding:14px 28px;
+background:#f0b400;
+padding:14px 30px;
 border-radius:10px;
-font-weight:700;
 text-decoration:none;
 color:#111;
-box-shadow:0 5px 20px rgba(255,196,0,.4);
+font-weight:700;
+box-shadow:0 5px 15px rgba(240,180,0,.4);
 }
 
 /* HERO */
 
 .hero{
-min-height:88vh;
+min-height:90vh;
 background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
 url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+
 background-size:cover;
 background-position:center;
 display:flex;
@@ -139,10 +133,10 @@ z-index:2;
 }
 
 .hero-sub{
-color:#ffc400;
 font-size:22px;
 font-weight:700;
-margin-bottom:15px;
+color:#f0b400;
+margin-bottom:18px;
 }
 
 .hero h1{
@@ -153,31 +147,31 @@ margin-bottom:25px;
 }
 
 .hero h1 span{
-color:#ffc400;
+color:#f0b400;
 }
 
 .hero p{
 font-size:20px;
 line-height:1.8;
-margin-bottom:35px;
 color:#ddd;
+margin-bottom:35px;
 max-width:700px;
 }
 
-.hero-btns{
+.hero-buttons{
 display:flex;
 gap:20px;
 flex-wrap:wrap;
 }
 
 .primary-btn{
-background:#ffc400;
+background:#f0b400;
 padding:18px 35px;
 border-radius:10px;
 text-decoration:none;
-color:#111;
-font-weight:700;
 font-size:18px;
+font-weight:700;
+color:#111;
 }
 
 .secondary-btn{
@@ -185,40 +179,40 @@ border:2px solid #fff;
 padding:18px 35px;
 border-radius:10px;
 text-decoration:none;
-color:#fff;
-font-weight:700;
 font-size:18px;
+font-weight:700;
+color:#fff;
 }
-
-/* HERO CAR */
 
 .hero-car{
 position:absolute;
-right:3%;
+right:2%;
 bottom:0;
 width:45%;
 }
 
 .hero-car img{
 width:100%;
-filter:drop-shadow(0 25px 30px rgba(0,0,0,.45));
+filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));
 }
 
 /* BOOKING */
 
 .booking-box{
-background:#fff;
 width:90%;
 margin:auto;
 margin-top:-70px;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:18px;
+
 position:relative;
 z-index:5;
-border-radius:20px;
-padding:30px;
-box-shadow:0 10px 40px rgba(0,0,0,.15);
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:20px;
 }
 
 .input-box{
@@ -238,12 +232,12 @@ color:#555;
 padding:15px;
 border:1px solid #ddd;
 border-radius:10px;
-font-size:15px;
 outline:none;
+font-size:15px;
 }
 
 .search-btn{
-background:#ffc400;
+background:#f0b400;
 border:none;
 border-radius:12px;
 font-size:18px;
@@ -279,6 +273,10 @@ line-height:1.7;
 
 /* FLEET */
 
+.fleet{
+padding:30px 5% 80px;
+}
+
 .section-title{
 text-align:center;
 margin-bottom:50px;
@@ -290,16 +288,12 @@ font-weight:800;
 }
 
 .section-title span{
-color:#ffc400;
+color:#f0b400;
 }
 
 .section-title p{
 margin-top:10px;
 color:#666;
-}
-
-.fleet{
-padding:20px 5% 80px;
 }
 
 .car-grid{
@@ -343,7 +337,7 @@ margin-bottom:15px;
 .price{
 font-size:30px;
 font-weight:800;
-color:#ffc400;
+color:#f0b400;
 margin-bottom:18px;
 }
 
@@ -364,7 +358,6 @@ footer{
 background:#000;
 color:#fff;
 padding:60px 5% 30px;
-margin-top:80px;
 }
 
 .footer-grid{
@@ -375,7 +368,7 @@ gap:40px;
 
 footer h3{
 margin-bottom:20px;
-color:#ffc400;
+color:#f0b400;
 }
 
 footer p{
@@ -388,7 +381,7 @@ text-align:center;
 margin-top:40px;
 padding-top:20px;
 border-top:1px solid rgba(255,255,255,.1);
-color:#888;
+color:#777;
 }
 
 /* MOBILE */
@@ -529,17 +522,17 @@ COMFORT • SAFETY • RELIABILITY
 
 <h1>
 CAR RENT <br>
-<span>SERVICES</span>
+<span>& PICK-UP SERVICES</span>
 </h1>
 
 <p>
-Enjoy premium car rental service with clean cars,
-professional drivers and affordable prices.
-Book local rides, airport pickup, wedding cars
-and outstation tours easily.
+Enjoy premium car rental and pick-up service with clean cars,
+professional drivers and affordable pricing.
+Airport pickup, railway pickup, wedding booking,
+local ride and outstation tour available.
 </p>
 
-<div class="hero-btns">
+<div class="hero-buttons">
 
 <a href="#" class="primary-btn">
 BOOK NOW
@@ -555,7 +548,7 @@ CALL NOW
 
 <div class="hero-car">
 
-<img src="https://pngimg.com/d/suzuki_PNG12361.png">
+<img src="swift.jpeg">
 
 </div>
 
@@ -566,12 +559,27 @@ CALL NOW
 <div class="booking-box">
 
 <div class="input-box">
+<label>Service Type</label>
+
+<select>
+<option>Choose Service</option>
+<option>Car Rental</option>
+<option>Airport Pick-up</option>
+<option>Railway Pick-up</option>
+<option>Wedding Booking</option>
+<option>Outstation Tour</option>
+</select>
+</div>
+
+<div class="input-box">
 <label>Pick-up Location</label>
+
 <select>
 <option>Select Location</option>
 <option>Sambalpur</option>
 <option>Nuapada</option>
 <option>Bhubaneswar</option>
+<option>Raipur</option>
 </select>
 </div>
 
@@ -633,9 +641,11 @@ SEARCH CAR
 
 <div class="car-grid">
 
+<!-- CARD -->
+
 <div class="car-card">
 
-<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/159099/swift-exterior-right-front-three-quarter.jpeg">
+<img src="swift.jpeg">
 
 <div class="car-content">
 
@@ -655,9 +665,11 @@ BOOK NOW
 
 </div>
 
+<!-- CARD -->
+
 <div class="car-card">
 
-<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/40565/i20-exterior-right-front-three-quarter-5.jpeg">
+<img src="i20.jpg">
 
 <div class="car-content">
 
@@ -677,9 +689,11 @@ BOOK NOW
 
 </div>
 
+<!-- CARD -->
+
 <div class="car-card">
 
-<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/45691/dzire-exterior-right-front-three-quarter.jpeg">
+<img src="dzire.webp">
 
 <div class="car-content">
 
@@ -699,9 +713,11 @@ BOOK NOW
 
 </div>
 
+<!-- CARD -->
+
 <div class="car-card">
 
-<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/51435/innova-crysta-exterior-right-front-three-quarter-2.jpeg">
+<img src="innova.png">
 
 <div class="car-content">
 
@@ -733,6 +749,7 @@ BOOK NOW
 
 <div>
 <h3>About Omkar</h3>
+
 <p>
 Premium car rental company providing
 comfortable and safe rides with affordable prices.
@@ -740,22 +757,28 @@ comfortable and safe rides with affordable prices.
 </div>
 
 <div>
+
 <h3>Services</h3>
+
 <p>
 Local Car Rental <br>
 Airport Pickup <br>
 Wedding Cars <br>
 Outstation Tours
 </p>
+
 </div>
 
 <div>
+
 <h3>Contact</h3>
+
 <p>
-📞 +919938017921<br>
+📞 +919938017921 <br>
 ✉️ omkarcarrent@gmail.com <br>
 📍 Odisha, India
 </p>
+
 </div>
 
 </div>
